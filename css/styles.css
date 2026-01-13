@@ -91,6 +91,12 @@ body {
     letter-spacing: 2px;
 }
 
+.hub-header .logo img {
+    max-height: 100px;
+    width: auto;
+    display: block;
+}
+
 .hub-content {
     width: 100%;
     max-width: 480px;
@@ -463,6 +469,7 @@ body {
     display: inline-block;
     background: linear-gradient(to right, #D4AF37 20%, #FFF 50%, #D4AF37 80%);
     background-size: 200% auto;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: shine 5s linear infinite;
