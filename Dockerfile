@@ -5,10 +5,11 @@ FROM nginx:alpine
 COPY . /usr/share/nginx/html
 
 # Copy Nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy Nginx configuration template
+COPY nginx.conf /etc/nginx/conf.d/default.conf.template
 
-# Expose port (Railway uses dynamic ports but Nginx defaults to 80 internally here)
+# Expose port (Nginx will listen on this port)
 EXPOSE 80
 
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start Nginx with environment variable substitution
+CMD /bin/sh -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
