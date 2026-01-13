@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JV Corp | Digital Experience</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&family=Oswald:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Meta/SEO -->
+    <meta name="description"
+        content="JV Corp - Excelencia en belleza, cuidado personal y formación profesional. Studio, Salon, School.">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <main id="app">
+
+        <!-- SECTION: HUB (JV CORP) -->
+        <section id="hub" class="page-section active">
+            <header class="hub-header">
+                <div class="logo">JV CORP</div>
+            </header>
+
+            <div class="hub-content">
+                <p class="hub-intro">Excelencia en belleza, cuidado personal<br>y formación profesional.</p>
+
+                <div class="card-stack">
+                    <!-- Card 1: Studio -->
+                    <div class="hub-card card-studio" onclick="navigateTo('studio')">
+                        <div class="card-icon">
+                            <!-- Icon placeholder: Razor/Barber -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="6" cy="6" r="3" />
+                                <circle cx="6" cy="18" r="3" />
+                                <line x1="20" y1="4" x2="8.12" y2="15.88" />
+                                <line x1="14.47" y1="14.48" x2="20" y2="20" />
+                                <line x1="8.12" y1="8.12" x2="12" y2="12" />
+                            </svg>
+                        </div>
+                        <h2>Studio</h2>
+                        <span class="card-subtitle">Industrial Gentleman</span>
+                    </div>
+
+                    <!-- Card 2: Salon -->
+                    <div class="hub-card card-salon" onclick="navigateTo('salon')">
+                        <div class="card-icon">
+                            <!-- Icon placeholder: Scissors/Silhouette -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="6" cy="6" r="3" />
+                                <path d="M8.12 8.12 12 12" />
+                                <path d="M20 4 8.12 15.88" />
+                                <circle cx="6" cy="18" r="3" />
+                                <path d="M14.8 14.8 20 20" />
+                            </svg>
+                        </div>
+                        <h2>Salon</h2>
+                        <span class="card-subtitle">Sophisticated Glamour</span>
+                    </div>
+
+                    <!-- Card 3: School -->
+                    <div class="hub-card card-school" onclick="navigateTo('school')">
+                        <div class="card-icon">
+                            <!-- Icon placeholder: Mortarboard/Book -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                            </svg>
+                        </div>
+                        <h2>School</h2>
+                        <span class="card-subtitle">Educational Authority</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="hub-footer">
+                <div class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </div>
+                <span>JV Corp S.A.C. © 2026</span>
+            </footer>
+        </section>
+
+        <!-- SECTION: STUDIO -->
+        <section id="studio" class="page-section">
+
+            <!-- Sticky Header -->
+            <header class="studio-header">
+                <div class="studio-logo">JV STUDIO</div>
+                <button class="menu-btn" aria-label="Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg>
+                </button>
+            </header>
+
+            <div class="studio-content">
+
+                <!-- Hero -->
+                <div class="studio-hero">
+                    <div class="barber-profile-container">
+                        <div class="barber-profile">
+                            <!-- Placeholder for Barber Image -->
+                            <img src="https://placehold.co/150x150/1a1a1a/silver?text=Barber" alt="Tu experto"
+                                class="barber-img">
+                        </div>
+                        <div class="expert-badge">
+                            <span class="expert-label">Tu experto hoy</span>
+                            <span class="expert-name">Javier Velasquez</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery: The Cuts -->
+                <div class="studio-gallery-section">
+                    <h3 class="section-title">THE CUTS</h3>
+                    <div class="gallery-carousel">
+                        <div class="gallery-item"><img src="https://placehold.co/300x400/222/FFF?text=FADE"
+                                alt="Fade Cut"></div>
+                        <div class="gallery-item"><img src="https://placehold.co/300x400/222/FFF?text=BEARD"
+                                alt="Beard Trim"></div>
+                        <div class="gallery-item"><img src="https://placehold.co/300x400/222/FFF?text=CLASSIC"
+                                alt="Classic Cut"></div>
+                        <div class="gallery-item"><img src="https://placehold.co/300x400/222/FFF?text=STYLING"
+                                alt="Styling"></div>
+                    </div>
+                </div>
+
+                <!-- Contact Grid -->
+                <div class="studio-contact-grid">
+                    <a href="https://wa.me/" target="_blank" class="contact-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" class="contact-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                        </svg>
+                        <span>Waze</span>
+                    </a>
+                    <a href="#" class="contact-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="contact-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                        </svg>
+                        <span>TikTok</span>
+                    </a>
+                </div>
+
+                <!-- Footer CTA -->
+                <div class="studio-footer-cta">
+                    <button class="btn-ghost-silver">Guardar Contacto (vCard)</button>
+                </div>
+
+                <div style="height: 100px;"></div> <!-- Spacing for FAB/Nav -->
+            </div>
+
+            <!-- Floating Action Button -->
+            <button class="fab-reserve">
+                RESERVA EXPRESS
+            </button>
+        </section>
+
+        <!-- SECTION: SALON -->
+        <section id="salon" class="page-section">
+
+            <header class="salon-header">
+                <div class="salon-logo">JV SALON</div>
+            </header>
+
+            <div class="salon-content">
+
+                <!-- Before/After Slider -->
+                <div class="salon-slider-section">
+                    <h3 class="salon-title">Transformaciones</h3>
+                    <div class="before-after-container" id="before-after-slider">
+                        <div class="ba-img-background"
+                            style="background-image: url('https://placehold.co/600x400/333/FFF?text=AFTER');"></div>
+                        <div class="ba-img-foreground" id="ba-foreground"
+                            style="background-image: url('https://placehold.co/600x400/888/FFF?text=BEFORE'); width: 50%;">
+                        </div>
+                        <input type="range" min="0" max="100" value="50" class="ba-slider" id="ba-range"
+                            oninput="updateBeforeAfter(this.value)">
+                        <div class="ba-slider-button" id="ba-button" style="left: 50%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m15 18-6-6 6-6" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Highlights Menu -->
+                <div class="salon-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <!-- Drop/Color -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
+                            </svg>
+                        </div>
+                        <span>Color</span>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <!-- Dryer/Styling -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-3h12v3a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-7a9 9 0 0 0-9-9z" />
+                            </svg>
+                        </div>
+                        <span>Styling</span>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <!-- Flower/Spa -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3a4.5 4.5 0 1 1 4.5-4.5M7.5 12H9m3 4.5a4.5 4.5 0 1 1-4.5-4.5M12 16.5V15m4.5-3a4.5 4.5 0 1 1-4.5 4.5M16.5 12H15" />
+                            </svg>
+                        </div>
+                        <span>Spa</span>
+                    </div>
+                </div>
+
+                <!-- Gift Card -->
+                <div class="gift-card-widget">
+                    <div class="gift-card-content">
+                        <h4>Regala Belleza</h4>
+                        <p>Tarjeta de regalo digital</p>
+                    </div>
+                    <div class="gift-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                            <line x1="1" y1="10" x2="23" y2="10" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Main CTA -->
+                <div class="salon-footer-cta">
+                    <button class="btn-gold-glow">Agendar mi Experiencia</button>
+                </div>
+
+                <div style="height: 100px;"></div>
+            </div>
+        </section>
+
+        <!-- SECTION: SCHOOL -->
+        <section id="school" class="page-section">
+
+            <header class="school-header">
+                <div class="school-logo">JV SCHOOL</div>
+                <a href="#" class="student-link-top" aria-label="Aula Virtual">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </a>
+            </header>
+
+            <div class="school-content">
+
+                <div class="school-hero-text">
+                    <h1>Formando a los<br>futuros expertos</h1>
+                </div>
+
+                <!-- Next Starts -->
+                <div class="next-starts-section">
+                    <h3 class="school-section-title">Próximos Inicios</h3>
+                    <div class="course-list">
+
+                        <!-- Item 1 -->
+                        <div class="course-ticket">
+                            <div class="ticket-date">
+                                <span class="month">FEB</span>
+                                <span class="day">15</span>
+                            </div>
+                            <div class="ticket-info">
+                                <h4>Barbería Avanzada</h4>
+                                <span class="badge-urgent">Últimas vacantes</span>
+                            </div>
+                            <div class="ticket-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="course-ticket">
+                            <div class="ticket-date">
+                                <span class="month">MAR</span>
+                                <span class="day">01</span>
+                            </div>
+                            <div class="ticket-info">
+                                <h4>Colorimetría Master</h4>
+                                <span class="badge-normal">Inscripciones abiertas</span>
+                            </div>
+                            <div class="ticket-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Social Proof -->
+                <div class="social-proof-section">
+                    <p>Certificaciones avaladas por</p>
+                    <div class="logos-row">
+                        <!-- Placeholders for logos -->
+                        <div class="proof-logo">MINEDU</div>
+                        <div class="proof-logo">L'OREAL</div>
+                        <div class="proof-logo">WAHL</div>
+                    </div>
+                </div>
+
+                <!-- Lead Magnet CTA -->
+                <div class="school-cta-section">
+                    <button class="btn-download">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Descargar Brochure 2026 (PDF)
+                    </button>
+                    <a href="#" class="student-login-footer">¿Ya eres alumno? Ingresa al Aula Virtual</a>
+                </div>
+
+                <div style="height: 100px;"></div>
+            </div>
+        </section>
+
+        <!-- BOTTOM NAVIGATION (Shared) -->
+        <nav id="bottom-nav" class="bottom-nav hidden">
+            <button onclick="navigateTo('hub')" class="nav-btn" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+            </button>
+            <button onclick="navigateTo('studio')" class="nav-btn" aria-label="Studio">Studio</button>
+            <button onclick="navigateTo('salon')" class="nav-btn" aria-label="Salon">Salon</button>
+            <button onclick="navigateTo('school')" class="nav-btn" aria-label="School">School</button>
+        </nav>
+
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

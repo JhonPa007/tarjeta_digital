@@ -1,0 +1,834 @@
+:root {
+    /* HUB Colors */
+    --hub-bg: #FFFFFF;
+    --hub-text-primary: #000000;
+    --hub-text-secondary: #2F4F4F;
+    --hub-card-studio-bg: #121212;
+    --hub-card-salon-bg: #F5F5DC;
+    --hub-card-school-bg: #F0F0F0;
+
+    /* STUDIO Colors */
+    --studio-bg: #121212;
+    --studio-text-title: #FFFFFF;
+    --studio-text-body: #B0B0B0;
+    --studio-chrome-start: #C0C0C0;
+    --studio-chrome-end: #E5E4E2;
+
+    /* SALON Colors */
+    --salon-bg: #F5F5DC;
+    --salon-accent: #D4AF37;
+    --salon-text: #1A1A1A;
+
+    /* SCHOOL Colors */
+    --school-bg: #F9F9F9;
+    --school-header: #121212;
+    --school-detail: #D4AF37;
+
+    /* Transitions */
+    --transition-speed: 0.4s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--hub-bg);
+    color: var(--hub-text-primary);
+    overflow-x: hidden;
+}
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Page Sections */
+.page-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed);
+    z-index: 0;
+    background-color: var(--hub-bg);
+    /* Default fallback */
+}
+
+.page-section.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    position: relative;
+    /* Allow flow when active */
+}
+
+/* HUB STYLES */
+#hub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    background-color: var(--hub-bg);
+}
+
+.hub-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hub-header .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.hub-content {
+    width: 100%;
+    max-width: 480px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hub-intro {
+    text-align: center;
+    color: var(--hub-text-secondary);
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.hub-card {
+    border-radius: 16px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hub-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    margin-bottom: 0.5rem;
+}
+
+.card-studio {
+    background-color: var(--hub-card-studio-bg);
+    color: #E5E4E2;
+    /* Silver */
+}
+
+.card-studio h2 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-salon {
+    background-color: var(--hub-card-salon-bg);
+    color: var(--salon-text);
+}
+
+.card-salon h2 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.card-salon .card-icon {
+    color: var(--salon-accent);
+}
+
+.card-school {
+    background-color: var(--hub-card-school-bg);
+    color: #121212;
+}
+
+.card-school h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.card-school .card-subtitle {
+    color: #555;
+    font-size: 0.8rem;
+}
+
+.hub-footer {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #888;
+    gap: 0.5rem;
+}
+
+/* UNIT PLACEHOLDERS */
+#studio {
+    background-color: var(--studio-bg);
+    color: var(--studio-text-title);
+    padding: 0;
+    overflow-y: auto;
+    /* Scrollable within section */
+    height: 100vh;
+}
+
+#salon {
+    background-color: var(--salon-bg);
+    color: var(--salon-text);
+    padding: 2rem;
+}
+
+#school {
+    background-color: var(--school-bg);
+    color: var(--school-header);
+    padding: 2rem;
+}
+
+/* --- STUDIO STYLES --- */
+.studio-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(18, 18, 18, 0.9);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.studio-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25rem;
+    color: #E5E4E2;
+    letter-spacing: 1px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: #E5E4E2;
+    cursor: pointer;
+}
+
+.studio-content {
+    padding: 1.5rem;
+}
+
+.studio-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.barber-profile-container {
+    position: relative;
+    text-align: center;
+}
+
+.barber-profile {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--studio-chrome-start), var(--studio-chrome-end));
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.barber-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #121212;
+}
+
+.expert-badge {
+    text-align: center;
+}
+
+.expert-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--studio-text-body);
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.25rem;
+}
+
+.expert-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+/* Gallery */
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    color: #FFF;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--studio-chrome-start);
+    padding-left: 0.75rem;
+}
+
+.gallery-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.gallery-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-item {
+    flex: 0 0 160px;
+    height: 220px;
+    scroll-snap-align: start;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(120%);
+    border-radius: 4px;
+    transition: filter 0.3s ease;
+}
+
+/* Contact Grid */
+.studio-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+    color: #FFF;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #FFF;
+}
+
+.contact-btn svg {
+    margin-bottom: 0.5rem;
+}
+
+/* CTAs */
+.fab-reserve {
+    position: fixed;
+    bottom: 80px;
+    /* Above Bottom Nav */
+    right: 20px;
+    background: linear-gradient(135deg, var(--studio-chrome-start), var(--studio-chrome-end));
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    z-index: 60;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.studio-footer-cta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.btn-ghost-silver {
+    background: transparent;
+    border: 1px solid var(--studio-chrome-start);
+    color: var(--studio-chrome-start);
+    padding: 1rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.btn-ghost-silver:hover {
+    background: rgba(192, 192, 192, 0.1);
+    color: #FFF;
+    border-color: #FFF;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    z-index: 100;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.bottom-nav.hidden {
+    transform: translateY(100%);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+/* --- SALON STYLES --- */
+.salon-header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.salon-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--salon-accent);
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(to right, #D4AF37 20%, #FFF 50%, #D4AF37 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.salon-content {
+    padding: 1.5rem;
+}
+
+/* Slider Before/After */
+.salon-slider-section {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.salon-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--salon-text);
+    margin-bottom: 1rem;
+}
+
+.before-after-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ba-img-background,
+.ba-img-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.ba-img-background {
+    z-index: 1;
+}
+
+.ba-img-foreground {
+    z-index: 2;
+    width: 50%;
+    border-right: 3px solid #FFF;
+}
+
+.ba-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: 0;
+    cursor: ew-resize;
+}
+
+.ba-slider-button {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    width: 40px;
+    height: 40px;
+    background: #FFF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    color: var(--salon-accent);
+}
+
+/* Highlights */
+.salon-highlights {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.highlight-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--salon-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--salon-accent);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+}
+
+.highlight-item span {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--salon-text);
+}
+
+/* Gift Card */
+.gift-card-widget {
+    background: linear-gradient(135deg, #111, #222);
+    border: 1px solid var(--salon-accent);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    color: var(--salon-accent);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gift-card-widget:hover {
+    transform: translateY(-3px);
+}
+
+.gift-card-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.gift-card-content p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* CTA */
+.salon-footer-cta {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-gold-glow {
+    background-color: #000;
+    color: var(--salon-accent);
+    border: 1px solid var(--salon-accent);
+    padding: 1rem 2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.btn-gold-glow:hover {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+    transform: scale(1.05);
+}
+
+/* --- SCHOOL STYLES --- */
+.school-header {
+    background-color: var(--school-header);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFF;
+}
+
+.school-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.student-link-top {
+    color: #FFF;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.school-content {
+    padding: 2rem 1.5rem;
+}
+
+.school-hero-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: #121212;
+}
+
+/* Next Starts (Tickets) */
+.next-starts-section {
+    margin-bottom: 3rem;
+}
+
+.school-section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.course-ticket {
+    background: #FFF;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--school-detail);
+    transition: transform 0.2s;
+}
+
+.course-ticket:hover {
+    transform: translateX(5px);
+}
+
+.ticket-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 1rem;
+    border-right: 1px solid #EEE;
+    min-width: 60px;
+}
+
+.ticket-date .month {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #888;
+}
+
+.ticket-date .day {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #121212;
+}
+
+.ticket-info {
+    flex: 1;
+    padding-left: 1rem;
+}
+
+.ticket-info h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: #121212;
+}
+
+.badge-urgent {
+    font-size: 0.7rem;
+    color: #C00;
+    font-weight: 600;
+    background: #FFF0F0;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.badge-normal {
+    font-size: 0.7rem;
+    color: #2F4F4F;
+    font-weight: 600;
+    background: #E0F2F1;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.ticket-arrow {
+    color: #CCC;
+}
+
+/* Social Proof */
+.social-proof-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0.8;
+}
+
+.social-proof-section p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: #888;
+}
+
+.logos-row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.proof-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #555;
+    user-select: none;
+}
+
+/* CTA */
+.school-cta-section {
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.btn-download {
+    background-color: var(--school-detail);
+    color: #FFF;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-download:hover {
+    transform: scale(1.02);
+}
+
+.student-login-footer {
+    display: block;
+    color: #555;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    margin-top: 0.5rem;
+}
